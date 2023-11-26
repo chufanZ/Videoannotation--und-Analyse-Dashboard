@@ -1,0 +1,19 @@
+The most important mistakes to watch out for is LEFTHANDNOTVISIBLE,DANCING
+
+Other mistakes to watch our are ,LOW_VOLUME,HANDS_NOT_MOVING,HIGH_VOLUME
+
+The best good action is GOOD_PAUSE
+
+Other good actions are ,BIG_GESTURE
+
+Each action is graded as follows:
+
+LOW_VOLUME is graded C.LEFTHANDNOTVISIBLE is graded F.DANCING is graded F.HANDS_NOT_MOVING is graded A.HIGH_VOLUME is graded A.
+
+BIG_GESTURE is graded F.GOOD_PAUSE is graded B.
+
+Grading is based on the duration of the action as a percentage of the total duration of the presentation.
+
+For mistakes, less than or equal to 33.33% is A, less than or equal to 53.33% is B, less than or equal to 73.33 is C, less than or equal to 93.33 is D, and greater than 93.33 is F.
+
+For good actions, greater than or equal to 93.33 is A, greater than or equal to 73.33% is B, greater than or equal to 53.33% is C, greater than or equal to 33.33% is D, and less than 33.33% is F.

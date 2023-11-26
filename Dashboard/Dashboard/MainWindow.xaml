@@ -1,0 +1,70 @@
+﻿<Window x:Class="Dashboard.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Dashboard"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="900" Width="1600">
+    <Viewbox>
+        <Grid Height="845" Width="1369">
+
+            <MediaElement x:Name="mediaElement" Margin="290,75,316,239" LoadedBehavior="Manual" Source="{Binding VideoSource}" />
+
+            <Button x:Name="ButtonPlay" Content="Play" HorizontalAlignment="Left" Margin="203,760,0,0" VerticalAlignment="Top" Height="60" Width="150" Click="ButtonPlay_Click"/>
+            <Button x:Name="ButtonPause" Content="Pause" HorizontalAlignment="Left" Margin="979,760,0,0" VerticalAlignment="Top" Height="60" Width="150" Click="ButtonPause_Click"/>
+
+            <ListBox x:Name="VideoListBox" Margin="15,80,1113,608" SelectionChanged="VideoListBox_Selection" >
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Titel}" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+            <ScrollViewer Margin="1082,78,25,586" >
+                <StackPanel x:Name="MistakeStackPanel" Height="Auto" Width="220" />
+            </ScrollViewer>
+            <ScrollViewer Margin="1081,271,25,421">
+                <StackPanel x:Name="GoodStuffStackPanel" Height="Auto" Width="220"/>
+            </ScrollViewer>
+            <ScrollViewer Margin="1084,444,25,248" >
+                <StackPanel x:Name="SentencesStackPanek" Height="Auto" Width="220"/>
+            </ScrollViewer>
+
+
+            <Slider x:Name="videoSlider" HorizontalAlignment="Left" Margin="80,651,0,0" VerticalAlignment="Top" Width="1116" Height="23" TickFrequency="30" 
+                     IsMoveToPointEnabled="True" ValueChanged="Slider_ValueChanged" Loaded="Slider_TickLoaded" MouseEnter="videoSlider_MouseEnter" MouseLeave="videoSlider_MouseLeave">
+                <Slider.Template>
+                    <ControlTemplate TargetType="{x:Type Slider}">
+                        <Grid>
+                            <TickBar x:Name="Mistake_TickBar" Fill="Red" Placement="Bottom" Height="10" Ticks="{TemplateBinding Ticks}" Visibility="Visible" />
+                            <TickBar x:Name="GoodStuff_TickBar" Fill="Blue" Placement="Top" Height="10" Ticks="{TemplateBinding Ticks}" Visibility="Visible" />
+                            <Border Name="Border" BorderThickness="3" BorderBrush="AliceBlue" Background="Blue" Height="3"/>
+                            <Track x:Name="PART_Track">
+                                <Track.Thumb>
+                                    <Thumb x:Name="PART_Thumb" Width="15" Height="15" Background="LightBlue" MouseLeftButtonUp="PART_Thumb_MouseLeftButtonUp"/>
+                                </Track.Thumb>
+                            </Track>
+                        </Grid>
+                    </ControlTemplate>
+                </Slider.Template>
+            </Slider>
+
+            <Grid Margin="570,698,0,95" HorizontalAlignment="Left" Width="183" >
+                <Popup x:Name="popup" Placement="Center" IsOpen="False">
+                    <TextBlock x:Name="Popup_TextBlock" Background="White" TextAlignment="Center"/>
+                </Popup>
+            </Grid>
+
+            <Button x:Name="Button_Filter" Content="Filter" HorizontalAlignment="Left" Margin="1246,618,0,0" VerticalAlignment="Top" Height="39" Width="100" Click="ButtonFilter_Click"/>
+
+            <TextBox x:Name="TextBox_Feedback" HorizontalAlignment="Left" Margin="16,271,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="234" Height="244"/>
+
+            <Button x:Name="Button_Save" Content="Save" HorizontalAlignment="Left" Margin="21,530,0,0" VerticalAlignment="Top" Height="42" Width="100" Click="ButtonSave_Click"/>
+
+        </Grid>
+    </Viewbox>
+</Window>
