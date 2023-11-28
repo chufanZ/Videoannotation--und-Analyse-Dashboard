@@ -1,6 +1,7 @@
 # Videoannotation und Analyse-Dashboard
 
 Bis jetzt benötigt das Dashboard, dass der Benutzer seine Übungsvideos und Feedback-Datei selbst in den entsprechenden Ordner legen und dann Das Programm ausführen.
+(In dem Video-Ordner und Json-Ordner sind die entsprechenden Dateien bereits eingerichtet. Sie können direkt ausführen. Falls später eine Neukonfiguration erforderlich ist, sollte der Name der Json-Datei im Json-Ordner weiterhin 'PracticeSession' bleiben.)
 
 Dashboard kombiniert und analysiert Übungsvideo und Feedback-Datei.
 
